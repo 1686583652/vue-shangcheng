@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="css/news.css">
+
+  <script src="js/news.js"></script>
+  <script src="node_modules/axios/dist/axios.js"></script>
+  <script src="node_modules/vue/dist/vue.min.js"></script>
+</head>
+
+<body>
+  <!-- 广告部分 -->
+  <header>
+    <div class="banner">
+      <img src="imgs/banner1.jpg" alt="">
+    </div>
+  </header>
+  <!-- 新闻列表部分 -->
+  <div id="app">
+    <div class="new-item" v-for="item in list">
+      <p>{{item.title}}</p>
+      <img :src="item.img" alt="" height="200" width="200">
+      <p>{{item.body}} </p>
+    </div>
+
+    <div class="more" v-if="endOfScreen">
+      loading...
+    </div>
+  </div>
+
+</body>
+
+</html>
